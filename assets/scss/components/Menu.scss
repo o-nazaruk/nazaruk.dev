@@ -1,0 +1,90 @@
+@import "../utility/Mixins.scss";
+
+// TODO: Make this pretty
+
+.menu.open {
+  path {
+    stroke: white;
+    d: path("M 4 7 h 12 M 4 17 h 16");
+  }
+}
+.menu {
+  position: fixed;
+  top: 100px;
+  left: 120px;
+  z-index: 9999;
+  cursor: pointer;
+  @include lg {
+    top: 50px;
+    left: 60px;
+  }
+  @include sm {
+    top: 25px;
+    left: 30px;
+  }
+  svg {
+    transition: all 0.2s ease-out;
+    path {
+      transition: all 0.2s ease-out;
+      pointer-events: none;
+    }
+    z-index: 99999;
+  }
+}
+body #root .ui.container .items {
+  // opacity: 1;
+  position: absolute !important;
+  top: -100px;
+  left: calc(-120px - 40vw);
+  width: 40vw;
+  height: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 212, 255, 0) 100%
+  );
+  color: white;
+  font-weight: bold;
+  z-index: -1;
+  transition: all 0.2s ease-out;
+  @include lg {
+    top: -50px;
+    left: calc(-60px - 40vw);
+  }
+  @include sm {
+    top: -25px;
+    left: calc(-30px - 40vw);
+  }
+
+  ul {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    li {
+      transform-origin: center left;
+
+      transition: all 0.2s ease-out;
+    }
+    li:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+body #root .ui.container .open .items {
+  left: -120px;
+  padding-left: 120px;
+  @include lg {
+    left: -60px;
+    padding-left: 60px;
+  }
+  @include sm {
+    left: -30px;
+    padding-left: 30px;
+    width: 100vw;
+  }
+}

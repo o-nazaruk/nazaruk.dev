@@ -1,0 +1,17 @@
+@import "../Colors.scss";
+
+.progress {
+  .bar {
+    border-radius: 6px;
+    height: 12px;
+    background: $grayscale-input;
+    width: 75%;
+    margin: 10px 0;
+    overflow: hidden;
+    .prog {
+      height: 100%;
+      background: $primary-default;
+      border-radius: 6px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use "../Typography.scss";
+@use "../Colors.scss";
+
+.button {
+  border: hidden;
+  background: white;
+  font-family: "Poppins";
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+.button::before {
+  transition: all 0.2s ease;
+}
+
+// Button sizes
+.button.large {
+  padding: 15px 70px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+// Button types
+.button.primary {
+  color: $background;
+  background: $primary-default;
+}
+.button.subtle {
+  color: $primary-default;
+  border: 2px solid #d9dbe9;
+}
+
+// Hover states
+.button.primary:hover {
+  background-color: $primary-dark;
+}
+.button.subtle:hover {
+  color: $primary-dark;
+}
+
+// Focus states
+.button.primary:focus::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+  border-radius: 20px;
+  background: $primary-light;
+}
+.button.subtle:focus::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+  border-radius: 40px;
+  background: $grayscale-line;
+}

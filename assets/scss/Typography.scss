@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./Colors.scss";
+
+@import "./utility/Variables.scss";
+@import "./utility/Mixins.scss";
+
+.ui.container {
+  font-family: Poppins;
+  color: $title-active;
+}
+
+.bold {
+  font-weight: bold;
+}
+.center {
+  text-align: center;
+}
+
+h1.theming {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 66px;
+  letter-spacing: 1px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @include md {
+    text-shadow: none;
+  }
+}
+.display.small {
+  font-size: 32px;
+  line-height: 34px;
+  letter-spacing: 1px;
+  @include md {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.display.medium {
+  font-size: 48px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  @include md {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.text {
+  color: $grayscale-body;
+  letter-spacing: 0.75px;
+}
+.text.large {
+  font-size: 24px;
+  line-height: 38px;
+  @include md {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+.text.medium {
+  font-size: 18px;
+  line-height: 34px;
+  @include md {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+.text.small {
+  font-size: 16px;
+  line-height: 28px;
+  @include md {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

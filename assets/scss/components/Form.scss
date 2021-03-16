@@ -1,0 +1,87 @@
+@use "../Colors.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+  label {
+    position: relative;
+    display: flex;
+    transition: all 0.2s;
+    .float {
+      position: absolute;
+      top: calc(50% + 1px);
+      left: 20px;
+      transform: translate(0, -50%);
+      color: $grayscale-placeholder;
+      user-select: none;
+      pointer-events: none;
+      display: flex;
+      svg {
+        transform: translate(0, 2px) scale(0.9);
+        margin-right: 10px;
+        transition: all 0.2s;
+        g,
+        path {
+          width: 100%;
+          stroke: $grayscale-placeholder;
+        }
+      }
+      div {
+        transition: all 0.2s;
+      }
+    }
+
+    .input {
+      padding: 20px 20px 20px 50px;
+      outline: none;
+      background: $grayscale-off-white;
+      border: 2px solid $grayscale-line;
+      border-radius: 16px;
+      flex-grow: 1;
+      transition: all 0.2s;
+      font-family: "Poppins";
+      color: $title-active;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .input:active,
+    .input:focus {
+      border: 2px solid black;
+    }
+
+    &:focus-within {
+      .float {
+        svg {
+          g,
+          path {
+            stroke: #111111;
+          }
+        }
+      }
+    }
+  }
+  label:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  label.typed {
+    .float {
+      div {
+        color: $grayscale-label;
+        transform: translate(0, -15px);
+        font-size: 14px;
+      }
+    }
+    .input {
+      padding: 30px 20px 10px 53px;
+    }
+  }
+  label.textarea {
+    height: 150px;
+    .float {
+      top: 20px;
+      left: 20px;
+      transform: none;
+    }
+  }
+}

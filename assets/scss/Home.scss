@@ -1,0 +1,391 @@
+@import "./utility/Variables.scss";
+@import "./utility/Mixins.scss";
+
+// Colors and typohraphy
+@import "./Colors.scss";
+@import "./Typography.scss";
+
+// Components
+@import "./components/Card.scss";
+@import "./components/Progress.scss";
+@import "./components/Buttons.scss";
+@import "./components/Form.scss";
+@import "./components/Menu.scss";
+
+body {
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.ui.container {
+  width: 100%;
+  height: 100%;
+
+  h1 img {
+    height: 1.1em;
+    transform: translate(0, 3px);
+  }
+  .card h2 {
+    display: flex;
+  }
+  h2 img {
+    height: 1.1em;
+    transform: translate(10px, -2px);
+  }
+
+  > div:not(.menu) {
+    position: initial !important;
+  }
+  > div:not(.menu) > div:first-child {
+    position: absolute !important;
+    overflow-x: hidden !important;
+  }
+  > div:not(.menu) > div:nth-child(2) {
+    display: none;
+  }
+
+  > div > div > div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @include md {
+      height: auto;
+      display: initial;
+    }
+  }
+  .content {
+    background: $background;
+    padding: 100px 120px;
+    width: calc(100% - 2 * 120px);
+    height: calc(100% - 2 * 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include lg {
+      padding: 50px 60px;
+      width: calc(100% - 2 * 60px);
+      height: calc(100% - 2 * 50px);
+      flex-direction: column;
+      justify-content: center;
+    }
+    @include md {
+      padding: 25px 30px;
+      width: calc(100% - 2 * 30px);
+      min-height: calc(100% - 2 * 25px);
+      height: auto;
+    }
+    @include sm {
+      .card {
+        padding: 35px;
+      }
+    }
+  }
+  .card {
+    h2 {
+      margin-bottom: 50px;
+      @include md {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .content > img {
+    width: 35vw;
+    max-width: 650px;
+    @include md {
+      width: 80%;
+    }
+  }
+
+  .intro {
+    .card {
+      margin-left: 175px;
+
+      @include rwd(1600) {
+        margin-left: 50px;
+      }
+      @include xl {
+        margin-left: 0;
+      }
+    }
+    p img {
+      width: 20px;
+      transform: translate(0, 2px);
+    }
+    @include xl {
+      .content {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  .education {
+    .content {
+      justify-content: initial;
+    }
+    .content > img {
+      position: absolute;
+      bottom: 0;
+      right: 120px;
+      width: auto;
+      height: 40vh;
+      @include xl {
+        height: 30vh;
+      }
+      @include sm {
+        right: 50px;
+      }
+    }
+    .card {
+      margin-left: 120px;
+      width: 880px;
+      @include rwd(1600) {
+        width: 600px;
+        margin-left: 50px;
+      }
+      @include xl {
+        width: auto;
+        margin-left: 0;
+        margin-top: -180px;
+      }
+    }
+    @include xl {
+      .content {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    ul {
+      list-style: url(../images/Radio.svg);
+      margin-left: 36px;
+      li {
+        margin-bottom: 30px;
+        padding-left: 5px;
+        h1 {
+          max-width: 595px;
+          margin-bottom: 10px;
+          transform: translate(0, -2px);
+          @include md {
+            transform: translate(0, -5px);
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .tech {
+    .card {
+      margin-left: 120px;
+    }
+    .bars {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .progress {
+      width: 50%;
+      margin-bottom: 50px;
+      @include md {
+        margin-bottom: 20px;
+      }
+    }
+    @include rwd(1450) {
+      .card {
+        margin-left: 50px;
+      }
+      .content > img {
+        width: 30vw;
+      }
+    }
+    @include xl {
+      .content {
+        flex-direction: column;
+        justify-content: center;
+      }
+      .content > img {
+        width: 40vw;
+      }
+      .card {
+        margin-left: 0;
+      }
+    }
+    @include md {
+      .content > img {
+        width: 50vw;
+      }
+      .progress {
+        width: 100%;
+      }
+    }
+    @include sm {
+      .content > img {
+        width: 80%;
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .portfolio {
+    @include xl {
+      .content {
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+    }
+    .content > img {
+      width: 30vw;
+      margin-left: 50px;
+      @include xl {
+        height: 40vw;
+        width: auto;
+      }
+      @include md {
+        width: 80%;
+        height: auto;
+      }
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: 900px;
+      @include rwd(1600) {
+        min-width: 750px;
+      }
+      @include rwd(1300) {
+        min-width: 660px;
+      }
+      @include md {
+        min-width: auto;
+      }
+      .card {
+        display: flex;
+        align-content: space-between;
+        @include md {
+          flex-direction: column-reverse;
+          width: 100%;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          padding-right: 25px;
+          h1 {
+            margin-bottom: 30px;
+            @include md {
+              margin-bottom: 0;
+              margin-top: 20px;
+            }
+          }
+          p {
+            width: 75%;
+            flex-grow: 1;
+            @include md {
+              display: none;
+            }
+          }
+          button {
+            align-self: baseline;
+          }
+        }
+      }
+      .card.large {
+        margin-bottom: 50px;
+        .image img {
+          width: 450px;
+          height: 100%;
+          object-fit: cover;
+          @include rwd(1600) {
+            width: 300px;
+          }
+          @include md {
+            width: 100%;
+            height: 160px;
+          }
+        }
+      }
+      .card.small {
+        width: calc(50% - 125px);
+        flex-direction: column;
+        .image img {
+          width: 100%;
+          height: 160px;
+          object-fit: cover;
+        }
+        .info h1 {
+          margin-bottom: 0;
+          margin-top: 20px;
+        }
+        @include md {
+          width: 100%;
+        }
+      }
+      > .small:not(:last-child) {
+        margin-right: 50px;
+        @include md {
+          margin-right: 0;
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+
+  .contact {
+    .card {
+      width: 1000px;
+      margin-left: 120px;
+    }
+    form {
+      padding: 40px 100px;
+      .button {
+        align-self: flex-end;
+        border-radius: 20px;
+      }
+    }
+    @include rwd(1600) {
+      .card {
+        margin-left: 50px;
+        width: auto;
+      }
+      .content > img {
+        width: 30vw;
+      }
+    }
+    @include rwd(1400) {
+      form {
+        padding: 40px 40px;
+      }
+    }
+    @include xl {
+      .content {
+        flex-direction: column;
+      }
+      .content > img {
+        margin-bottom: 50px;
+      }
+      .card {
+        margin-left: 0;
+        width: calc(100% - 70px);
+      }
+    }
+    @include md {
+      .content > img {
+        width: 50vw;
+      }
+      form label svg {
+        transform: translate(0, 0px) scale(0.9);
+      }
+      form label .input {
+        padding-top: 18px;
+      }
+      form label.typed .input {
+        padding-top: 28px;
+      }
+    }
+    @include sm {
+      form {
+        padding: 40px 10px;
+      }
+    }
+  }
+}
